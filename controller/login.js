@@ -33,6 +33,7 @@ class loginController {
                 msg: "禁止登录，请联系管理员！"
             })
         }
+        console.log(crypto.createHash('md5').update(password).digest('hex'));
         if (crypto.createHash('md5').update(password).digest('hex') === user.login_password) {
             req.session.user = user;
 
